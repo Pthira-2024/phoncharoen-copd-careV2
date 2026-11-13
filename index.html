@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="th"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PHONCHAROEN COPD CARE — คลินิก COPD โรงพยาบาลพรเจริญ</title>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@600;700;800&family=Prompt:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F5F2EB;--ink:#1F2937;--muted:#5B6472;--orange:#E86A33;--shadow:3px 3px 0 #1F2937}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:'Prompt',sans-serif}
+h1,h2,h3{font-family:'Kanit',sans-serif}header{background:#fff;border-bottom:1.5px solid var(--ink);padding:14px 18px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.logo{display:flex;gap:10px;align-items:center}.badge{width:44px;height:44px;background:var(--orange);color:#fff;border:1.5px solid var(--ink);border-radius:14px;display:grid;place-items:center;font-size:24px;box-shadow:2px 2px 0 var(--ink)}
+.btn{border:1.5px solid var(--ink);border-radius:999px;padding:12px 20px;font-weight:700;cursor:pointer;box-shadow:var(--shadow);background:var(--orange);color:#fff}.btn:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}.btn-white{background:#fff;color:var(--ink)}
+#menuBtn{position:fixed;left:14px;top:86px;z-index:50;width:52px;height:52px;border-radius:50%;border:1.5px solid var(--ink);background:#fff;font-size:22px;cursor:pointer;box-shadow:var(--shadow)}
+#sidebar{position:fixed;left:14px;top:150px;z-index:49;width:290px;max-width:88vw;background:#fff;border:1.5px solid var(--ink);border-radius:20px;box-shadow:var(--shadow);padding:14px;display:none;max-height:72vh;overflow:auto}
+#sidebar.open{display:block}#sidebar a{display:flex;gap:8px;padding:10px 10px;border-radius:12px;text-decoration:none;color:var(--ink);font-weight:600}#sidebar a:hover{background:#FFEDD5}
+main{max-width:1080px;margin:0 auto;padding:24px 18px 40px 78px} @media(max-width:700px){main{padding-left:18px}}
+.hero{text-align:center;padding:28px 10px}.hero h1{font-size:clamp(28px,6vw,52px);margin:8px 0}.pill{display:inline-block;background:var(--ink);color:#fff;border-radius:999px;padding:6px 14px;font-size:12px;letter-spacing:.1em}
+.card{background:#fff;border:1.5px solid var(--ink);border-radius:20px;box-shadow:var(--shadow);padding:18px;margin-top:18px}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}@media(max-width:800px){.grid3{grid-template-columns:1fr}}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}@media(max-width:700px){.grid2{grid-template-columns:1fr}}
+label{font-size:13px;font-weight:600;display:block;margin:12px 0 6px}input,select,textarea{width:100%;min-height:48px;border:1.5px solid var(--ink);border-radius:12px;padding:10px 12px;font:inherit;background:#fff}textarea{min-height:80px}
+.num{display:inline-flex;background:var(--ink);color:#fff;border-radius:999px;padding:6px 12px;font-size:12px;font-weight:800}.num b{background:var(--orange);border-radius:999px;padding:2px 8px;margin-right:6px}
+.pastel-blue{background:#E0F2FE}.pastel-green{background:#DCFCE7}.pastel-orange{background:#FFEDD5}.pastel{border:1.5px solid var(--ink);border-radius:16px;padding:14px}
+.cat-row{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}.cat-btn{width:44px;height:44px;border-radius:50%;border:1.5px solid var(--ink);background:#fff;font-weight:800;cursor:pointer;box-shadow:2px 2px 0 var(--ink)}.cat-btn.active{background:var(--orange);color:#fff}
+.chip{border:1.5px solid var(--ink);background:#fff;border-radius:999px;padding:9px 14px;font-weight:600;cursor:pointer;box-shadow:2px 2px 0 var(--ink)}.chip.active{background:var(--orange);color:#fff}
+.result{border:1.5px solid var(--ink);border-radius:16px;padding:16px;background:#FFEDD5;margin-top:16px}.big{font-size:32px;font-weight:800}
+table{width:100%;border-collapse:collapse}th,td{padding:10px;border-bottom:1px solid #E5E7EB;text-align:left;vertical-align:top}th{background:#FFEDD5}
+.report{position:relative;overflow:hidden;background:#fff;border:1.5px solid var(--ink);border-radius:20px;padding:22px}.watermark{position:absolute;inset:0;display:grid;place-items:center;font-size:42px;font-weight:800;color:rgba(31,41,55,.07);transform:rotate(-18deg);pointer-events:none;text-align:center}
+footer{background:#1F2937;color:#fff;padding:22px;text-align:center;margin-top:30px}.bar{height:14px;background:#eee;border:1.5px solid var(--ink);border-radius:999px;overflow:hidden}.bar i{display:block;height:100%;background:var(--orange)}
+</style></head><body>
+<header><div class="logo"><div class="badge">🫁</div><div><b>PHONCHAROEN COPD CARE</b><br><small>คลินิก COPD โรงพยาบาลพรเจริญ</small></div></div><a href="#pefr"><button class="btn">เริ่มบันทึก →</button></a></header>
+<button id="menuBtn" onclick="document.getElementById('sidebar').classList.toggle('open')">☰</button>
+<nav id="sidebar"><b>เมนู</b>
+<a href="#knowledge">01 COPD KNOWLEDGE</a><a href="#pefr">02 % Predicted PEFR</a><a href="#spiro">03 Spirometry</a><a href="#cat">04 CAT Assessment</a><a href="#mmrc">05 mMRC Dyspnea Scale</a><a href="#exac">06 EXACERBATION • GOLD ABE • 6MWT • BODE</a><a href="#clinic">07 COPD CLINIC RECORD</a><a href="#report">08 REPORT VIEW</a><a href="#ref">09 REFERENCE</a><a href="#history">10 PATIENT HISTORY</a></nav>
+<main>
+<div class="hero"><span class="pill">โรงพยาบาลพรเจริญ • คลินิก COPD</span><h1>หายใจได้เต็มปอด<br>ใช้ชีวิตได้เต็มที่</h1><p style="color:var(--muted)">ประเมิน PEFR • Spirometry • CAT • mMRC • GOLD ABE • 6MWT • BODE ครบในหน้าเดียว</p></div>
+
+<section id="knowledge"><span class="num"><b>01</b>COPD KNOWLEDGE</span><h2>ความรู้โรคปอดอุดกั้นเรื้อรัง</h2><div class="grid3">
+<div class="card"><h3>🫁 สาเหตุและอาการ</h3><div class="pastel pastel-blue">สูบบุหรี่ ฝุ่น PM2.5 ควันไฟ อาการ: ไอเรื้อรัง มีเสมหะ เหนื่อยง่าย แน่นหน้าอก หายใจมีเสียงวี้ด</div></div>
+<div class="card"><h3>🏃 การปฏิบัติตัว</h3><div class="pastel pastel-green">เลิกบุหรี่ หลีกเลี่ยงฝุ่น/ควัน ออกกำลังกายสม่ำเสมอตามกำลัง ฉีดวัคซีนตามแพทย์แนะนำ มาพบแพทย์ตามนัด</div></div>
+<div class="card"><h3>💊 การรักษาและการดูแล</h3><div class="pastel pastel-orange">ใช้ยาพ่นตามแพทย์สั่ง ฝึกเทคนิคยาพ่นให้ถูก ฟื้นฟูสมรรถภาพปอด เฝ้าระวังอาการกำเริบ</div></div></div></section>
+
+<section id="pefr" class="card"><span class="num"><b>02</b>% Predicted PEFR</span><h2>คำนวณ % Predicted PEFR (ไทย)</h2>
+<div class="grid2"><div><label>เพศ</label><select id="sex"><option>ชาย</option><option>หญิง</option></select><label>อายุ (ปี) 10-92</label><input id="age" type="number" value="60"><label>ส่วนสูง (cm)</label><input id="height" type="number" value="160"></div>
+<div><label>PEFR ที่วัดได้ (L/min)</label><input id="pefr" type="number" placeholder="เช่น 300"><label>วันที่ตรวจ</label><input id="examDate" type="date"><br><button class="btn" onclick="calcPEFR()">คำนวณผล</button></div></div>
+<div id="pefrOut" class="result" style="display:none"></div>
+<p style="font-size:13px;color:var(--muted)">สูตร Dejsomritrutai et al. 2000 — ชาย: PEFR = -16.859 + 0.307A + 0.141H - 0.0018A² - 0.001AH | หญิง: PEFR = -31.355 + 0.162A - 0.00084A² + 0.391H - 0.00099H² - 0.00072AH | ผลสูตรหน่วย L/s แปลงเป็น L/min โดยคูณ 60</p></section>
+
+<section id="spiro" class="card"><span class="num"><b>03</b>Spirometry</span><h2>คำนวณ Spirometry + GOLD Stage</h2>
+<div class="grid2"><div><label>FVC (L)</label><input id="fvc" type="number" step="0.01"><label>FEV1 (L)</label><input id="fev1" type="number" step="0.01"></div><div><label>น้ำหนัก (kg) สำหรับ BMI</label><input id="weight" type="number"><button class="btn" style="margin-top:18px" onclick="calcSpiro()">คำนวณ Spirometry</button></div></div><div id="spiroOut" class="result" style="display:none"></div></section>
+
+<section id="cat" class="card"><span class="num"><b>04</b>CAT Assessment</span><h2>CAT Assessment — กดเลือก 0-5</h2><p style="font-size:13px;color:var(--muted)">ข้อความนี้เป็นข้อความถอดความ ไม่ใช่แบบฟอร์มฉบับทางการที่ได้รับอนุญาต</p><div id="catBox"></div><div class="result"><b>คะแนน CAT รวม: <span id="catTotal">0</span> / 40</b> — <span id="catText">ผลกระทบน้อย</span></div></section>
+
+<section id="mmrc" class="card"><span class="num"><b>05</b>mMRC Dyspnea Scale</span><h2>ระดับความเหนื่อย mMRC</h2><div id="mmrcBox" style="display:flex;gap:8px;flex-wrap:wrap"></div><div id="mmrcOut" class="result">เลือก Grade 0-4</div></section>
+
+<section id="exac" class="card"><span class="num"><b>06</b>EXACERBATION • GOLD ABE • 6MWT • BODE</span><h2>ประวัติกำเริบ + GOLD ABE + 6MWT + BODE</h2>
+<div class="grid2"><div><label>จำนวนกำเริบใน 1 ปี (ครั้ง)</label><input id="exacN" type="number" value="0"><label>นอน รพ. จากกำเริบ (ครั้ง)</label><input id="hospN" type="number" value="0"></div><div><label>ระยะเดิน 6 นาที (เมตร)</label><input id="walk" type="number" placeholder="เช่น 320"><button class="btn" style="margin-top:18px" onclick="calcAll()">คำนวณ GOLD ABE + 6MWT + BODE</button></div></div><div id="goldOut" class="result" style="display:none"></div></section>
+
+<section id="clinic" class="card"><span class="num"><b>07</b>COPD CLINIC RECORD</span><h2>แบบบันทึกคลินิก COPD</h2>
+<div class="grid2"><div><label>HN</label><input id="hn"><label>ชื่อ-นามสกุล</label><input id="fullName"><label>เบอร์โทร</label><input id="phone"></div><div><label>สถานะสูบบุหรี่</label><select id="smoke"><option>ไม่เคยสูบ</option><option>สูบอยู่</option><option>เลิกแล้ว</option></select><label>มวน/วัน</label><input id="cig" type="number"><label>ปีที่สูบ</label><input id="smokeY" type="number"></div></div>
+<label>อุปกรณ์ยาพ่น + ชื่อยา</label><input id="inhaler" placeholder="เช่น MDI - Budesonide/Formoterol">
+<label>ความสม่ำเสมอการใช้ยา</label><select id="adh"><option>ดี</option><option>ปานกลาง</option><option>ไม่สม่ำเสมอ</option></select>
+<label>เทคนิคการใช้ยาพ่น (ติ๊กข้อที่ทำถูก)</label><div id="techBox"></div><div id="techOut" style="margin-top:8px"></div>
+<label>แผนติดตาม / วันนัดครั้งถัดไป</label><input id="nextDate" type="date"><textarea id="notes" placeholder="หมายเหตุแพทย์/พยาบาล"></textarea>
+<button class="btn" onclick="saveRecord()">💾 บันทึกข้อมูลผู้ป่วย</button><span id="saveMsg" style="margin-left:10px"></span></section>
+
+<section id="report" class="card"><span class="num"><b>08</b>REPORT VIEW</span><h2>รายงานสรุป</h2><div class="report"><div class="watermark">Cr.PHANTHIRA USANSA</div><div style="text-align:center"><b>โรงพยาบาลพรเจริญ</b><br>PHONCHAROEN COPD CARE — คลินิก COPD</div><hr><div id="reportBody">กรอกข้อมูลแล้วกดคำนวณ ผลจะมาสรุปที่นี่</div><p style="text-align:center;font-weight:700">Cr.PHANTHIRA USANSA</p></div></section>
+
+<section id="ref" class="card"><span class="num"><b>09</b>REFERENCE</span><h2>แหล่งอ้างอิง</h2><ul><li>Dejsomritrutai W, et al. (2000) — สมการ Predicted PEFR คนไทย 3,954 คน อายุ 10-92 ปี</li><li>CAT ภาษาไทย — Cronbach's alpha 0.853 สัมพันธ์ SGRQ 0.652</li><li>GOLD 2023 — กลุ่ม A/B/E และ GOLD Stage 1-4</li><li>mMRC Dyspnea Scale 0-4 • BODE Index • 6-Minute Walk Test</li></ul><p style="font-size:13px;color:var(--muted)">เครื่องมือเพื่อการศึกษาและคัดกรองเบื้องต้น ไม่ใช่การวินิจฉัยแทนแพทย์</p></section>
+
+<section id="history" class="card"><span class="num"><b>10</b>PATIENT HISTORY</span><h2>ประวัติผู้ป่วยที่บันทึกไว้</h2><input id="search" placeholder="ค้นหาตามชื่อ หรือ HN…" oninput="renderHistory()"><div id="historyBody" style="overflow:auto;margin-top:12px"></div><button class="btn-white btn" onclick="if(confirm('ลบประวัติทั้งหมด?')){localStorage.removeItem('copd_records');renderHistory()}">ลบทั้งหมด</button></section>
+</main><footer><b>PHONCHAROEN COPD CARE</b><br><small>คลินิก COPD โรงพยาบาลพรเจริญ</small><p><b>Cr.PHANTHIRA USANSA</b></p></footer>
+<script>
+let catScores=[0,0,0,0,0,0,0,0], mmrc=1, state={};
+const catItems=[["ไอ","ไม่ไอเลย","ไอตลอดเวลา"],["มีเสมหะ","ไม่มีเสมหะเลย","มีเสมหะเต็มหน้าอกตลอด"],["แน่นหน้าอก","ไม่แน่นเลย","แน่นมาก"],["เหนื่อยเมื่อขึ้นบันได","ไม่เหนื่อยเลย","เหนื่อยมาก"],["ทำกิจกรรมที่บ้าน","ทำได้สบาย","ลำบากมาก"],["มั่นใจเมื่อออกจากบ้าน","มั่นใจ","ไม่มั่นใจเลย"],["นอนหลับ","นอนหลับดี","นอนไม่ดีเพราะอาการปอด"],["มีแรง","มีแรงมาก","ไม่มีแรงเลย"]];
+const mmrcText=["เหนื่อยเฉพาะเมื่อออกแรงหนักมาก","เหนื่อยเมื่อเดินเร็วบนพื้นราบ หรือเดินขึ้นเนินเตี้ยๆ","เดินช้ากว่าคนวัยเดียวกัน หรือต้องหยุดพักเมื่อเดินบนพื้นราบ","ต้องหยุดพักหลังเดินประมาณ 100 เมตร","เหนื่อยจนออกนอกบ้านไม่ได้ หรือเหนื่อยแม้ขณะแต่งตัว/อาบน้ำ"];
+document.getElementById('catBox').innerHTML=catItems.map((c,i)=>`<div><b>${i+1}. ${c[0]}</b> <span style="color:var(--muted)">${c[1]} ↔ ${c[2]}</span><div class="cat-row">${[0,1,2,3,4,5].map(v=>`<button class="cat-btn ${v===0?'active':''}" onclick="setCat(${i},${v},this)">${v}</button>`).join('')}</div></div>`).join('');
+function setCat(i,v,el){catScores[i]=v; el.parentNode.querySelectorAll('.cat-btn').forEach(b=>b.classList.remove('active')); el.classList.add('active'); updateCat();}
+function updateCat(){let t=catScores.reduce((a,b)=>a+b,0); document.getElementById('catTotal').textContent=t; document.getElementById('catText').textContent=t<=10?'ผลกระทบน้อย':t<=20?'ผลกระทบปานกลาง':t<=30?'ผลกระทบมาก':'ผลกระทบมากที่สุด';}
+document.getElementById('mmrcBox').innerHTML=[0,1,2,3,4].map(v=>`<button class="chip ${v===1?'active':''}" onclick="setMmrc(${v},this)">Grade ${v}</button>`).join('');
+function setMmrc(v,el){mmrc=v; document.querySelectorAll('#mmrcBox .chip').forEach(b=>b.classList.remove('active')); el.classList.add('active'); document.getElementById('mmrcOut').innerHTML=`<b>mMRC Grade ${v}</b> — ${mmrcText[v]}`;}
+document.getElementById('techBox').innerHTML=["เขย่ายาก่อนใช้","หายใจออกให้สุดก่อนสูดยา","อมปากกระบอกให้สนิท","สูดยาเข้าช้าและลึก","กลั้นหายใจประมาณ 10 วินาที","บ้วนปากหลังใช้ยา"].map(t=>`<label style="display:inline-block;margin:4px"><input type="checkbox" value="${t}" onchange="updateTech()" style="width:auto"> ${t}</label>`).join(' ');
+function updateTech(){let c=document.querySelectorAll('#techBox input:checked').length; document.getElementById('techOut').innerHTML=`ทำถูก ${c} / 6 ข้อ (${Math.round(c/6*100)}%) — ${c>=5?'ผ่านเกณฑ์':'ต้องทบทวน'}`;}
+function calcPEFR(){let A=+document.getElementById('age').value||0,H=+document.getElementById('height').value||0,M=+document.getElementById('pefr').value||0,sex=document.getElementById('sex').value;
+let ls = sex==='ชาย' ? (-16.859+0.307*A+0.141*H-0.0018*A*A-0.001*A*H) : (-31.355+0.162*A-0.00084*A*A+0.391*H-0.00099*H*H-0.00072*A*H);
+let pred=Math.round(ls*60*10)/10, pct=M?Math.round(M/pred*1000)/10:0; let txt=pct>=80?'ปกติ':pct>=60?'ผิดปกติเล็กน้อย':pct>=40?'ปานกลาง':'รุนแรง';
+state.pred=pred; state.pct=pct;
+document.getElementById('pefrOut').style.display='block'; document.getElementById('pefrOut').innerHTML=`<b>Predicted PEFR:</b> <span class="big">${pred} L/min</span> &nbsp; <b>%Predicted:</b> <span class="big">${pct}%</span> — ${txt}<div class="bar"><i style="width:${Math.min(pct,100)}%"></i></div>${A<10||A>92?'<p>⚠️ อายุอยู่นอกช่วงงานวิจัย (10-92 ปี) สูตรอาจไม่แม่นยำ</p>':''}`;
+updateReport();}
+function calcSpiro(){let fvc=+document.getElementById('fvc').value||0, fev1=+document.getElementById('fev1').value||0; if(!fvc||!fev1){alert('กรอก FVC และ FEV1 ก่อน');return;}
+let ratio=Math.round(fev1/fvc*1000)/10; let stage = ratio>=70?'ไม่เข้าเกณฑ์อุดกั้น':''; state.ratio=ratio;
+document.getElementById('spiroOut').style.display='block'; document.getElementById('spiroOut').innerHTML=`<b>FEV1/FVC:</b> <span class="big">${ratio}%</span> — ${ratio<70?'มีการอุดกั้น (Obstruction)':'ไม่พบการอุดกั้น'}<br><small>การจัด GOLD Stage ต้องใช้ %Predicted FEV1 จาก Spirometry ของโรงพยาบาลประกอบ</small>`; updateReport();}
+function calcAll(){let ex=+document.getElementById('exacN').value||0, hosp=+document.getElementById('hospN').value||0, walk=+document.getElementById('walk').value||0;
+let cat=catScores.reduce((a,b)=>a+b,0); let group=(ex>=2||hosp>=1)?'E':(mmrc>=2||cat>=10)?'B':'A';
+let walkTxt=walk? (walk>=350?'ดี':walk>=250?'ปานกลาง':'ต่ำ / เสี่ยงสูง'):'—';
+let bmi=0; let h=+document.getElementById('height').value||0,w=+document.getElementById('weight').value||0; if(h&&w) bmi=Math.round(w/((h/100)*(h/100))*10)/10;
+state.group=group; state.walk=walk; state.bmi=bmi;
+document.getElementById('goldOut').style.display='block'; document.getElementById('goldOut').innerHTML=`<b>GOLD Group:</b> <span class="big">${group}</span> &nbsp; <b>6MWT:</b> ${walk||'—'} m — ${walkTxt} &nbsp; <b>BMI:</b> ${bmi||'—'}<br><small>CAT ${cat}/40 • mMRC ${mmrc} • กำเริบ ${ex} ครั้ง • นอน รพ. ${hosp} ครั้ง | BODE ต้องใช้ %Predicted FEV1 + BMI + mMRC + 6MWD ประกอบ</small>`; updateReport();}
+function updateReport(){document.getElementById('reportBody').innerHTML=`<b>ผู้ป่วย:</b> ${document.getElementById('fullName').value||'—'} &nbsp; HN: ${document.getElementById('hn').value||'—'} &nbsp; วันที่: ${document.getElementById('examDate').value||'—'}<br><b>Predicted PEFR:</b> ${state.pred||'—'} L/min &nbsp; <b>%Predicted PEFR:</b> ${state.pct??'—'}%<br><b>FEV1/FVC:</b> ${state.ratio??'—'}% &nbsp; <b>GOLD Group:</b> ${state.group||'—'} &nbsp; <b>CAT:</b> ${catScores.reduce((a,b)=>a+b,0)}/40 &nbsp; <b>mMRC:</b> ${mmrc}<br><b>6MWT:</b> ${state.walk||'—'} m &nbsp; <b>BMI:</b> ${state.bmi||'—'}`;}
+function saveRecord(){let rec={hn:document.getElementById('hn').value,fullName:document.getElementById('fullName').value,examDate:document.getElementById('examDate').value,cat:catScores.reduce((a,b)=>a+b,0),mmrc:1*mmrc,pct:state.pct||'',pred:state.pred||'',group:state.group||'',walk:state.walk||'',inhaler:document.getElementById('inhaler').value,phone:document.getElementById('phone').value};
+if(!rec.fullName){alert('กรอกชื่อผู้ป่วยก่อน');return;} let arr=JSON.parse(localStorage.getItem('copd_records')||'[]'); arr.unshift({...rec,id:Date.now()}); localStorage.setItem('copd_records',JSON.stringify(arr)); document.getElementById('saveMsg').textContent='✅ บันทึกแล้ว'; renderHistory(); updateReport();}
+function renderHistory(){let q=(document.getElementById('search').value||'').toLowerCase(); let arr=JSON.parse(localStorage.getItem('copd_records')||'[]').filter(r=>(r.fullName||'').toLowerCase().includes(q)||(r.hn||'').includes(q));
+document.getElementById('historyBody').innerHTML=arr.length?`<table><tr><th>ผู้ป่วย / HN</th><th>วันที่</th><th>CAT</th><th>%PEFR</th><th>GOLD</th><th>6MWT</th><th></th></tr>${arr.map(r=>`<tr><td><b>${r.fullName}</b><br><small>HN ${r.hn||'—'}</small></td><td>${r.examDate||'—'}</td><td>${r.cat}/40 • mMRC ${r.mmrc}</td><td>${r.pct||'—'}%</td><td>Group ${r.group||'—'}</td><td>${r.walk||'—'} m</td><td><button onclick="delRec(${r.id})">🗑️</button></td></tr>`).join('')}</table>`:'<p>ยังไม่มีข้อมูลที่บันทึกไว้</p>';}
+function delRec(id){let arr=JSON.parse(localStorage.getItem('copd_records')||'[]').filter(r=>r.id!==id); localStorage.setItem('copd_records',JSON.stringify(arr)); renderHistory();}
+document.getElementById('examDate').value=new Date().toISOString().slice(0,10); setMmrc(1,document.querySelector('#mmrcBox .chip')); renderHistory(); updateTech();
+</script></body></html>
